@@ -1,0 +1,28 @@
+body {
+  font-family: sans-serif;
+}
+
+#form-adicionar {
+  margin-bottom: 20px;
+}
+
+#nova-tarefa {
+  width: 200px;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+#lista-tarefas {
+  list-style: none;
+  padding: 0;
+}
+
+#lista-tarefas li {
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+}
+
+#lista-tarefas li.feito {
+  text-decoration: line-through;
+}

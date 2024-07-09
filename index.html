@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+    <h1>Lista de Tarefas</h1>
+
+    <form id="form-adicionar">
+        <input type="text" id="nova-tarefa" placeholder="Digite a nova tarefa">
+        <button type="submit" id="env">Adicionar</button>
+    </form>
+
+    <ul id="lista-tarefas">
+        <li></li>
+    </ul>
+
+    <script>
+    $(document).ready(function() {
+    $('#form-adicionar').submit(function(event) {
+        event.preventDefault();
+
+        var novaTarefa = $('#nova-tarefa').val();
+
+        if (novaTarefa) {
+            adicionarTarefa(novaTarefa);
+            $('#nova-tarefa').val('');
+        }
+    });
+
+    $('#lista-tarefas').on('click', 'li', function() {
+        $(this).toggleClass('feito');
+    });
+});
+
+function adicionarTarefa(textoTarefa) {
+    var novaTarefa = $('<li>').text(textoTarefa);
+    $('#lista-tarefas').append(novaTarefa);
+}
+
+    </script>
+</body>
+</html>
